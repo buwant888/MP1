@@ -4,7 +4,7 @@ import { ContainerInner, ContainerOuter } from '@/components/layout/Container'
 import { footerItems } from '@/config/siteConfig'
 import { ThemeToggle } from '@/components/shared/ThemeToggle'
 import { name } from '@/config/infoConfig'
-import SocialLinks from '@/components/home/SocialLinks'
+
 
 
 function NavLink({
@@ -43,7 +43,7 @@ export function Footer() {
                   </p>
                   <ThemeToggle />
                 </div>
-                <SocialLinks className='mt-0'/>
+
               </div>
             </div>
           </ContainerInner>

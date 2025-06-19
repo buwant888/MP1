@@ -6,7 +6,6 @@ import { ArrowUpRight } from '@phosphor-icons/react'
 import { ProjectItemType } from '@/config/infoConfig'
 import { utm_source } from '@/config/siteConfig'
 import Link from 'next/link'
-import { Favicon } from "favicon-stealer";
 
 export function ProjectCard({ project, titleAs }: { project: ProjectItemType, titleAs?: keyof JSX.IntrinsicElements }) {
   const utmLink = `https://${project.link.href}?utm_source=${utm_source}`
@@ -17,7 +16,15 @@ export function ProjectCard({ project, titleAs }: { project: ProjectItemType, ti
         <div className=''>
           <div className='flex flex-col sm:flex-row justify-center sm:justify-start items-start sm:items-center gap-4'>
             <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full">
-              <Favicon url={project.link.href} />
+              <div
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-200"
+                style={{
+                  clipPath: 'polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%)',
+                }} >
+                <span className="text-xl font-bold text-gray-600">
+                  {project.name.charAt(0).toUpperCase()}
+                </span>
+              </div>
             </div>
             <Component className="text-base font-semibold">
               {project.name}

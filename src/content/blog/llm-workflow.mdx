@@ -1,75 +1,15 @@
 ---
-title: 'My LLM Codegen Workflow'
-description: 'A practical guide to using LLMs for efficient software development'
-date: '2025-02-16'
+title: '如何拥有一个自己的web应用'
+
+description: '使用docker，cloudflare和ngiex最终实现自己的web应用上线'
+date: '2025-06-18'
 ---
+# ***cloudflare***
 
-# My LLM Codegen Workflow
+域名托管在cloudfare之后，clareflare就会代管这些域名。所有通过域名进行访问的流量都会经过cloudflare，再由cloudflare进行转发至个人服务器。保护个人服务器不会收到攻击而瘫痪。
 
-tl;dr; Brainstorm spec, then plan a plan, then execute using LLM codegen. Discrete loops. Then magic. ✩₊˚.⋆☾⋆⁺₊✧
+在cloudflare上还可以免费解析域名，免费提供cdn和ssh证书服务（小黄云），浏览器向网站请求服务时，网站会发给浏览器一个证书，握手成功后访问就会变成https加密，数据会通过加密通道传输，不然很容易被第三方抓包，被窃取数据。
 
-## The Process
+# ***ngiex***
 
-Here's my current workflow for using LLMs in software development. It's built upon personal experience and conversations with fellow developers. Note that in the fast-moving world of AI, what works today might need adjustment tomorrow.
-
-### Step 1: Idea Refinement
-
-Start with a conversational LLM (like ChatGPT-4) and use this prompt:
-
-```
-Ask me one question at a time so we can develop a thorough, step-by-step spec for this idea. Each question should build on my previous answers, and our end goal is to have a detailed specification I can hand off to a developer. Let's do this iteratively and dig into every relevant detail. Remember, only one question at a time.
-
-Here's the idea: <Your Idea>
-```
-
-After the brainstorming concludes, ask for a comprehensive spec:
-
-```
-Now that we've wrapped up the brainstorming process, can you compile our findings into a comprehensive, developer-ready specification? Include all relevant requirements, architecture choices, data handling details, error handling strategies, and a testing plan.
-```
-
-Save this as `spec.md` in your repo. This spec can be used for multiple purposes:
-- Code generation
-- Idea validation
-- White paper generation
-- Business model creation
-- Deep research foundation
-
-### Step 2: Planning
-
-Take your spec to a reasoning model and use one of these prompts based on your needs:
-
-For Test-Driven Development:
-```
-Draft a detailed, step-by-step blueprint for building this project. Break it down into small, iterative chunks that build on each other. Make sure the steps are small enough to be implemented safely with strong testing, but big enough to move the project forward.
-
-The output should provide a series of prompts for a code-generation LLM that will implement each step in a test-driven manner. Prioritize best practices, incremental progress, and early testing.
-
-Make sure each prompt builds on previous ones and ends with proper integration. No orphaned code!
-```
-
-For Regular Development:
-```
-Draft a detailed, step-by-step blueprint for building this project. Break it down into small, iterative chunks that build on each other. Make sure the steps are small enough to be implemented safely but big enough to move the project forward.
-
-The output should provide a series of prompts for a code-generation LLM that will implement each step. Prioritize best practices and incremental progress.
-
-Make sure each prompt builds on previous ones and ends with proper integration. No orphaned code!
-```
-
-Save the resulting plan as `prompt_plan.md` and generate a `todo.md` checklist to track progress.
-
-## Time Investment
-
-This entire planning process typically takes about 15 minutes. The investment in proper planning pays off significantly during the implementation phase, leading to more structured and maintainable code.
-
-## Why This Works
-
-This approach provides several benefits:
-1. Clear documentation from the start
-2. Well-structured development plan
-3. Manageable, testable steps
-4. Consistent progress tracking
-5. Reduced complexity in each development phase
-
-Remember: The key is in the iterative nature of the process. Each step builds on the previous one, ensuring that you're always moving forward with a clear understanding of what needs to be done next.
+在解析完自己的域名后（一般使用“A”将子域名解析到自己服务器ip地址，然后打开终端ping一下），解析成功就可以用域名访问自己的IP地址了，但是默认访问的是80端口，这时候需要用neigx来将所需端口代理到指定的域名上了，于是就可以将子域名和docker部署网站一一对应起来。

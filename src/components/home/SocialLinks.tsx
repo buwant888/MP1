@@ -22,16 +22,13 @@ export default function SocialLinks({ className }: { className?: string }) {
                     <span className="sr-only">{link.name}</span>
                 </Link>
             ))}
-            <Link
-                href={`mailto:${email}`}
-                target="_blank"
-                rel="noreferrer"
+            <div
                 aria-label='Email'
-                className="inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-accent hover:text-accent-foreground"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-md"
             >
                 <CustomIcon name='email' />
                 <span className="sr-only">Email</span>
-            </Link>
+            </div>
         </div>
     )
 }

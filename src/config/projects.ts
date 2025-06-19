@@ -1,95 +1,70 @@
 // Types
-export type ProjectItemType = {
-  name: string
-  description: string
-  link: { href: string; label: string }
-  tags: string[]
-}
+
 
 export type ActivityItemType = {
   name: string
   description: string
-  date: string
-  location: string
   link?: string
 }
 
-// Awards
-export const awardsHeadLine = "Awards & Honors"
-export const awardsIntro = "Recognition for academic and professional achievements."
-
-export const awards: Array<ActivityItemType> = [
-  {
-    name: 'Outstanding Teacher Award',
-    description: '',
-    date: '2024',
-    location: 'SCLS, Shanghai',
-  },
-  {
-    name: 'Zhui Ying Award',
-    description: '',
-    date: '2023',
-    location: 'Qingpu, Shanghai',
-  },
-]
+import { ProjectItemType } from './infoConfig'
 
 // Research & Projects
-export const projectHeadLine = "Research & Projects"
-export const projectIntro = "Academic research and technical projects I've worked on."
+export const projectHeadLine = "目前觉得好用的一些开源项目"
+export const projectIntro = "以下是一些在github上的开源项目，国内访问会很卡，需科学上网或者使用国内的镜像，建议在自己的服务器上部署。"
 
 export const projects: Array<ProjectItemType> = [
   {
-    name: 'Student Final Project Portfolio',
-    description: 'Static website portfolio',
-    link: { href: 'scls-cs.com', label: 'GitHub Cards' },
-    tags: ['Website', 'Next.js', 'TailwindCSS', 'DaisyUI', 'Portfolio']
+    name: 'CloudSaver',
+    description: '网盘资源搜索与转存工具。',
+    link: { href: 'github.com/jiangrui1994/CloudSaver', label: 'GitHub' },
+    tags: ['Vue 3', 'Express'],
+    icon: 'magicbox.png'
   },
   {
-    name: 'Seeking DNA',
-    description: '2022 SCLS Hackathon',
-    link: { href: 'https://scls-cs.gitbook.io/scls-apcs-lab/lab5-dna', label: 'Hackathon' },
-    tags: ['Hackathon', 'Java']
+    name: 'one api',
+    description: 'LLM API 管理 & 分发系统',
+    link: { href: 'github.com/songquanpeng/one-api', label: 'GitHub' },
+    tags: ['JavaScript', 'Go'],
+    icon: 'aibesttools.png'
   },
   {
-    name: 'Texas Holdem Poker Judge',
-    description: '2024 SCLS Hackathon',
-    link: { href: 'https://onecompiler.com/challenges/42yf4n5yn/scls-hackathon', label: 'Hackathon' },
-    tags: ['Hackathon']
+    name: 'rustdesk',
+    description: '远程桌面软件，开箱即用，无需任何配置。',
+    link: { href: 'github.com/rustdesk/rustdesk?tab=readme-zh', label: 'GitHub' },
+    tags: ['rust', 'docker'],
+    icon: 'flux1.png'
   },
   {
-    name: 'AI Camp Course Development',
-    description: 'Developed a comprehensive AI curriculum for high school students, incorporating real-world projects and startup concepts.',
-    link: { href: 'https://scls-cs.gitbook.io/ai-camp', label: 'View Course' },
-    tags: ['Education', 'AI']
+    name: 'gemini balance',
+    description: '实现gemini的国内中转和轮询',
+    link: { href: 'github.com/snailyp/gemini-balance/blob/main/README_ZH.md', label: 'GitHub' },
+    tags: ['Python'],
+    icon: 'devtoolset.png'
   },
 ]
 
 // Hobbies & Volunteer
-export const activitiesHeadLine = "Hobbies & Volunteer"
-export const activitiesIntro = "Personal interests and community contributions."
+export const activitiesHeadLine = "好用的一些网站"
+export const activitiesIntro = "这里是我经常会使用的一些网站，有些是我自己搭建的，有些是引用大佬的，大家可以随意使用"
 
 export const activities: Array<ActivityItemType> = [
   {
-    name: 'Python Workshop',
+    name: 'Claude',
     description:
-      'Teaching basic Python programming concepts to beginners. Covering variables, control flow, and functions.',
-    date: '2024-02-24',
-    location: 'Shanghai',
-    link: 'https://example.com/python-workshop',
+      '一个可以使用Claude sonnet4的网站，写短文能力很强，排版也好看',
+    link: 'https://claude.kelaodealice.icu/',
   },
   {
-    name: 'AI Ethics Discussion',
+    name: 'Crawl4AI',
     description:
-      'A group discussion about the ethical implications of AI development and its impact on society.',
-    date: '2024-03-01',
-    location: 'Shanghai',
-    link: 'https://example.com/ai-ethics',
+      '一个免费爬取指定网页内容的网站，无需任何部署，直接可生成mark down格式并支持一键下载',
+    link: 'https://crawl4ai.streamlit.app/',
   },
   {
-    name: 'Code Review Session',
+    name: 'CloudSaver',
     description:
-      'Helping students improve their coding skills through peer code review and best practices sharing.',
-    date: '2024-03-15',
-    location: 'Shanghai',
+      '自己使用云服务器搭建的网盘资源搜索工具，想用的来问我用户名密码。',
+    link: 'http://35.212.254.42:8008/',
   },
 ]

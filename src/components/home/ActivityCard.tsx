@@ -21,18 +21,7 @@ export function ActivityCard({ activity, titleAs }: { activity: ActivityItemType
           </p>
         </div>
 
-        <div className="relative z-10 mt-auto pt-4">
-          <div className='flex flex-row items-center gap-4 text-xs font-semibold opacity-80'>
-            <div className="flex items-center gap-1">
-              <Clock size={16} /> 
-              {activity.date}
-            </div>
-            <div className="flex items-center gap-1">
-              <MapPin size={16} /> 
-              {activity.location}
-            </div>
-          </div>
-        </div>
+
       </div>
       {activity.link && (
         <Link
