@@ -1,26 +1,23 @@
-import { awards } from '@/config/projects'
+import { activities } from '@/config/projects'
 import { Card } from '@/components/shared/Card'
 import { Section } from '@/components/layout/Section'
 
-export function Awards() {
+export function Activities() {
   return (
-    <Section title="Awards">
+    <Section title="Activities">
       <div className="grid grid-cols-1 gap-4">
-        {awards.map((award, index) => (
+        {activities.map((activity, index) => (
           <Card key={index}>
             <div className="flex flex-col gap-2">
               <div className="flex items-center justify-between">
-                <h3 className="font-medium">{award.name}</h3>
-                <span className="text-sm text-muted-foreground">
-                  {award.date}
-                </span>
+                <h3 className="font-medium">{activity.name}</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                {award.description}
+                {activity.description}
               </p>
-              {award.link && (
+              {activity.link && (
                 <a
-                  href={award.link}
+                  href={activity.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-primary hover:underline"
